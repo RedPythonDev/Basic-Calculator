@@ -1,0 +1,72 @@
+#i had to define what add, subtract, multiply, and divide means first
+def add(x, y):
+    return x + y
+def subtract(x, y):
+    return x - y
+def multiply(x, y):
+    return x * y
+def divide(x, y):
+    return x / y
+
+#did a loop
+while True:
+
+    # i followed a similar design online lol
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+
+    try:
+        option = input("Select an option: ")
+    except ValueError:
+        print("Select an option (1/2/3/4): ")
+        continue
+
+    if option == '1':
+        while True: #did another loop here so it won't go back to "Select an option: " if it valueerrors
+            try:
+                num1 = float(input("Type a number: ")) #did float instead of int so i can use decimals
+                num2 = float(input("Type another number: "))
+            except ValueError:
+                continue
+            print(num1, "+", num2, "=", add(num1, num2))
+            break
+
+    if option == '2':
+        while True:
+            try:
+                num1 = float(input("Type a number: "))
+                num2 = float(input("Type another number: "))
+            except ValueError:
+                continue
+            print(num1, "-", num2, "=", subtract(num1, num2))
+            break
+
+    if option == '3':
+        while True:
+            try:
+                num1 = float(input("Type a number: "))
+                num2 = float(input("Type another number: "))
+            except ValueError:
+                continue
+            print(num1, "*", num2, "=", multiply(num1, num2))
+            break
+
+    if option == '4':
+        while True:
+            try:
+                num1 = float(input("Type a number: "))
+                num2 = float(input("Type another number: "))
+            except ValueError:
+                continue
+            print(num1, "/", num2, "=", divide(num1, num2))
+            break
+
+    #to give me the option of continuing to use the calculator or not
+    next_calculation = input("Continue [yes/no]: ")
+    next_calculation = next_calculation.lower()
+    if next_calculation == 'yes':
+        continue
+    if next_calculation == 'no':
+        break
